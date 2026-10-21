@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>聖徳太子チャレンジ！｜耳トレ脳トレ</title>
+<style>
+:root{--ink:#26304b;--pink:#ff7da8;--yellow:#ffdc6e;--blue:#7ed8f4;--mint:#a6efd5;--purple:#b6a0ff;--paper:#fffdf7}
+*{box-sizing:border-box}body{margin:0;color:var(--ink);font-family:system-ui,-apple-system,"Yu Gothic",Meiryo,sans-serif;background:radial-gradient(circle at 10% 10%,#ffe6ef 0 9%,transparent 10%),radial-gradient(circle at 90% 25%,#dff7ff 0 11%,transparent 12%),linear-gradient(135deg,#fff8df,#f5f0ff);min-height:100vh}
+button,input,select{font:inherit}button{cursor:pointer;border:0;border-radius:14px;font-weight:800;transition:transform .12s,filter .12s}button:hover{filter:brightness(1.03);transform:translateY(-1px)}button:active{transform:translateY(1px)}
+.wrap{width:min(960px,100%);margin:auto;padding:20px 16px 34px}.top{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap}.brand{font-size:clamp(1.25rem,3vw,2rem);font-weight:1000;letter-spacing:.02em}.brand span{display:inline-grid;place-items:center;background:var(--yellow);border:3px solid white;border-radius:16px;width:42px;height:42px;margin-right:8px;box-shadow:0 4px 0 #e8bd4b}.pill{background:white;border:2px solid #f0e7ff;border-radius:999px;padding:8px 13px;font-weight:800;box-shadow:0 3px 0 #e7def6}
+.hero{text-align:center;padding:24px 10px 18px}.hero h1{font-size:clamp(1.8rem,5vw,3rem);margin:4px 0 8px;line-height:1.2}.hero p{margin:0;color:#65708d;font-weight:650}.panel{background:rgba(255,255,255,.9);border:3px solid white;border-radius:26px;padding:clamp(16px,3vw,28px);box-shadow:0 9px 0 rgba(117,99,161,.12),0 18px 45px rgba(76,65,121,.08);margin:14px 0}.settings{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.setting label{display:block;font-size:.88rem;font-weight:850;margin-bottom:7px}.setting select{width:100%;border:2px solid #e4e6f5;background:#fbfbff;padding:12px;border-radius:12px;color:var(--ink);font-weight:700}.btn-primary{background:var(--pink);color:#fff;padding:14px 22px;box-shadow:0 5px 0 #db5b89;font-size:1.05rem}.btn-blue{background:var(--blue);color:#173b56;padding:12px 18px;box-shadow:0 4px 0 #50b6d8}.btn-yellow{background:var(--yellow);color:#5b4513;padding:12px 18px;box-shadow:0 4px 0 #e5bd48}.btn-plain{background:#f1edff;color:#594e85;padding:11px 15px;box-shadow:0 4px 0 #d7cdf7}.center{text-align:center}.startline{margin-top:20px;display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.howto{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.how{background:#fff9e8;border-radius:17px;padding:14px}.how:nth-child(2){background:#eaf9ff}.how:nth-child(3){background:#f5efff}.how b{display:block;margin-bottom:5px}.small{font-size:.88rem;color:#6e7893;line-height:1.6}.hidden{display:none!important}.gamehead{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap}.stats{display:flex;gap:8px;flex-wrap:wrap}.stat{background:#f7f4ff;border-radius:13px;padding:8px 12px;font-weight:850}.people{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:18px 0}.person{border-radius:20px;padding:15px 8px 13px;text-align:center;border:2px solid white;min-width:0}.person:nth-child(1){background:#ffe8f0}.person:nth-child(2){background:#e5f8ff}.person:nth-child(3){background:#e6fff4}.avatar{font-size:clamp(2.5rem,8vw,4.2rem);line-height:1.15;filter:drop-shadow(0 3px 0 #ffffff)}.person strong{display:block;margin:7px 0 3px}.wave{height:22px;display:flex;justify-content:center;align-items:center;gap:3px;margin-top:8px}.wave i{display:block;width:4px;height:7px;border-radius:9px;background:#7c83ad;opacity:.35}.playing .wave i{opacity:1;animation:wave .55s ease-in-out infinite alternate}.playing .wave i:nth-child(3n){animation-delay:.2s}.playing .wave i:nth-child(2n){animation-delay:.1s}@keyframes wave{to{height:21px}}.playbox{text-align:center;background:#f9f7ff;border-radius:20px;padding:20px 14px}.playicon{font-size:2.4rem}.playbox h2{margin:6px 0}.playbox p{color:#69728d;margin:6px 0 16px}.actions{display:flex;justify-content:center;gap:10px;flex-wrap:wrap}.answers{margin-top:18px}.answers label{font-weight:850;display:block;margin:12px 0 6px}.answers input{width:100%;padding:14px 15px;border:2px solid #dfe2f1;border-radius:13px;background:#ffffff;color:#26304b;-webkit-text-fill-color:#26304b;caret-color:#26304b;opacity:1;font-size:16px;font-weight:700;outline:none;color-scheme:light}.answers input:focus{border-color:#9b8aff;box-shadow:0 0 0 3px #eee9ff}.answergrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.feedback{margin-top:16px;padding:14px;border-radius:14px;font-weight:750;line-height:1.7}.good{background:#e4fff2;color:#176849}.bad{background:#fff0f3;color:#9d3456}.resultscore{font-size:2.5rem;font-weight:1000;color:#7858d6}.footer{text-align:center;font-size:.8rem;color:#7d8298;margin:22px 0 0}
+@media(max-width:620px){.wrap{padding:12px 11px 24px}.settings{grid-template-columns:1fr}.howto{grid-template-columns:1fr}.people{gap:7px}.person{padding:12px 3px}.person strong{font-size:.9rem}.panel{border-radius:21px}.answergrid{grid-template-columns:1fr}.top{align-items:flex-start}.pill{font-size:.82rem}.hero{padding-top:18px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top"><div class="brand"><span>👂</span>みみトレ！</div><div class="pill">🧠 聖徳太子チャレンジ</div></header>
+  <section class="hero"><h1>いっせいに聞いて、<br>ぜんぶ当てよう！</h1><p>3人の声を聞き分ける、耳と記憶の脳トレゲーム</p></section>
+
+  <section id="setup" class="panel">
+    <h2 style="margin-top:0">🎮 チャレンジ設定</h2>
+    <div class="settings">
+      <div class="setting"><label for="difficulty">難易度</label><select id="difficulty"><option value="easy">やさしい（ゆっくり）</option><option value="normal" selected>ふつう</option><option value="hard">むずかしい（速め）</option></select></div>
+      <div class="setting"><label for="rounds">問題数</label><select id="rounds"><option value="5">5問</option><option value="10" selected>10問</option><option value="15">15問</option></select></div>
+      <div class="setting"><label for="wlen">単語の文字数</label><select id="wlen"><option value="all" selected>すべて</option><option value="2">2文字</option><option value="3">3文字</option><option value="4">4文字</option><option value="5">5文字</option><option value="3-4">3〜4文字</option></select></div>
+      <div class="setting"><label for="voice">声の違い</label><select id="voice"><option value="auto" selected>ふつう</option><option value="wide">はっきり（高低差が大きい）</option><option value="narrow">そっくり（高低差が小さい）</option></select></div>
+    </div>
+    <p class="small">※ 音声データはゲームに同梱されているので、ネット接続や端末の音声設定に関係なく、3人の声がいつも同時に重なって流れます。iPhoneはマナーモードを解除し、音量を上げてください。<br>現在の音声：<b id="voiceMode"></b></p>
+    <div class="startline"><button id="start" class="btn-primary">✨ ゲームスタート！</button></div>
+  </section>
+
+  <section id="intro" class="panel">
+    <h2 style="margin-top:0">あそびかた</h2>
+    <div class="howto">
+      <div class="how"><b>① 👥 3人が同時に話す</b><span class="small">それぞれ違う単語を、同時に読み上げます。</span></div>
+      <div class="how"><b>② 👂 よーく聞こう</b><span class="small">声の高さや話す速さもヒントに、3つの単語を覚えよう。</span></div>
+      <div class="how"><b>③ ⌨️ 入力して答える</b><span class="small">3つの回答欄に単語を入力。順番は自由で、正解した数だけ得点になります。</span></div>
+    </div>
+  </section>
+
+  <section id="game" class="panel hidden">
+    <div class="gamehead"><div class="stats"><div class="stat">問題 <span id="roundNow">1</span>/<span id="roundMax">10</span></div><div class="stat">⭐ 正解 <span id="score">0</span></div></div><button id="quit" class="btn-plain">設定に戻る</button></div>
+    <div id="people" class="people">
+      <div class="person"><div class="avatar">👧🏻</div><strong>Aさん</strong><div class="small">ピッチ高め</div><div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div class="person"><div class="avatar">🧑🏻</div><strong>Bさん</strong><div class="small">ふつうの声</div><div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+      <div class="person"><div class="avatar">👨🏽</div><strong>Cさん</strong><div class="small">低めの声</div><div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+    </div>
+    <div class="playbox" id="playbox"><div class="playicon">🔊</div><h2 id="phaseTitle">耳をすませて！</h2><p id="phaseText">準備ができたら、音声を再生しよう。</p><div class="actions"><button id="listen" class="btn-blue">🔁 もう一度聞く</button><button id="showAnswer" class="btn-yellow hidden">💡 答えを見る</button></div></div>
+    <div id="answerArea" class="answers">
+      <h3>⌨️ 聞こえた3つの言葉は？</h3>
+      <p class="small">聞こえた単語を3つ入力してください。入力する順番は自由です。ひらがな・カタカナはどちらでも正解になります。</p>
+      <div class="answergrid">
+        <div><label for="ans0">回答 ①</label><input id="ans0" autocomplete="off" placeholder="聞こえた単語"></div>
+        <div><label for="ans1">回答 ②</label><input id="ans1" autocomplete="off" placeholder="聞こえた単語"></div>
+        <div><label for="ans2">回答 ③</label><input id="ans2" autocomplete="off" placeholder="聞こえた単語"></div>
+      </div>
+      <div class="startline"><button id="submit" class="btn-primary">答え合わせ！</button></div>
+    </div>
+    <div id="feedback" class="feedback hidden" aria-live="polite"></div>
+    <div class="startline"><button id="next" class="btn-primary hidden">次の問題へ ➜</button></div>
+  </section>
+
+  <section id="result" class="panel center hidden"><div style="font-size:3.5rem">🏆</div><h2>チャレンジ終了！</h2><div class="resultscore"><span id="finalScore">0</span>点</div><p id="resultText"></p><p class="small" id="resultDetail"></p><div class="startline"><button id="again" class="btn-primary">もう一度チャレンジ！</button><button id="back" class="btn-plain">設定を変える</button></div></section>
+  <p class="footer">みみトレ！ — たのしく耳をきたえよう ✨</p>
+</div>
+<script src="voices_data.js"></script>
+<script>
+(() => {
+  const $ = id => document.getElementById(id);
+  const wordBank = [
+    "りんご","ねこ","でんしゃ","さくら","バナナ","くるま","うさぎ","すいか","めがね","ひこうき",
+    "たまご","らっぱ","きつね","アイス","とけい","カメラ","みかん","おにぎり","ピアノ","くじら",
+    "いちご","ふね","ぼうし","たぬき","にんじん","ほし","ラーメン","ペンギン","たいこ","ぶどう",
+    "ぞう","ケーキ","ロボット","はなび","りす","ゆき","パン","イルカ","くつした","おばけ",
+    "まくら","すずめ","プリン","きのこ","トマト","かばん","かえる","チョコ","たいよう","つみき",
+    "いぬ","さる","かさ","つき","あめ","はな","とり","くま","ひまわり","たこやき","ざりがに","ふうせん","てんぷら","ぶらんこ","ちりとり","サッカー","かたつむり","すべりだい","ハンバーグ","クリスマス","ゆうえんち","こいのぼり","オムライス","ぬいぐるみ","ちょうちょ"
+  ];
+  const people = [
+    {name:"Aさん", pitch:1.35, rate:0.88},
+    {name:"Bさん", pitch:1.0, rate:1.0},
+    {name:"Cさん", pitch:0.78, rate:1.08}
+  ];
+  let round=0, total=10, score=0, correctTotal=0, answers=[], answered=false, running=false, usedVoices=[];
+  let availableVoices=[];
+  const normalize = s => (s||"").normalize("NFKC").toLowerCase()
+    .replace(/[ァ-ヶ]/g, ch => String.fromCharCode(ch.charCodeAt(0) - 0x60))
+    .replace(/[\s　。、！？!?,.'「」『』・ー]/g,"");
+// ===== 日本語かな 簡易フォルマント音声合成 (外部依存なし) =====
+const SR = 22050; let FRG = 0.07; const setFRG=v=>{FRG=v;};
+const VOW = { a:[800,1250,2600], i:[300,2300,3100], u:[350,1350,2300], e:[500,1950,2650], o:[500,900,2450] };
+const ROWS = {
+  "":   "あいうえお", k:"かきくけこ", g:"がぎぐげご", s:"さしすせそ", z:"ざじずぜぞ",
+  t:"たちつてと", d:"だぢづでど", n:"なにぬねの", h:"はひふへほ", b:"ばびぶべぼ",
+  p:"ぱぴぷぺぽ", m:"まみむめも", r:"らりるれろ"
+};
+const MORA = {};
+for (const c in ROWS) [...ROWS[c]].forEach((ch,i)=>{ MORA[ch]={c, v:"aiueo"[i]}; });
+Object.assign(MORA,{ "や":{c:"y",v:"a"},"ゆ":{c:"y",v:"u"},"よ":{c:"y",v:"o"},"わ":{c:"w",v:"a"},"を":{c:"",v:"o"},"ん":{c:"N",v:""},"っ":{c:"Q",v:""} });
+MORA["し"].c="sh"; MORA["じ"].c="j"; MORA["ぢ"].c="j"; MORA["ち"].c="ch"; MORA["つ"].c="ts"; MORA["づ"].c="z"; MORA["ふ"].c="f"; MORA["ひ"].c="hy";
+const SMALL = { "ゃ":"a","ゅ":"u","ょ":"o" };
+
+function toMorae(word){
+  const s=[...word.normalize("NFKC").replace(/[ァ-ヶ]/g,ch=>String.fromCharCode(ch.charCodeAt(0)-0x60))];
+  const out=[];
+  for(let i=0;i<s.length;i++){
+    const ch=s[i], m=MORA[ch];
+    if(SMALL[ch]) continue;
+    if(ch==="ー"){ const p=out[out.length-1]; if(p&&p.v) out.push({c:"",v:p.v,long:true}); continue; }
+    if(!m) continue;
+    const mm={c:m.c,v:m.v};
+    if(SMALL[s[i+1]]){ mm.v=SMALL[s[i+1]]; mm.pal=true; }
+    const p=out[out.length-1];
+    // 長音: お段+う → o, え段+い → e
+    if(ch==="う"&&p&&p.v==="o") { out.push({c:"",v:"o",long:true}); continue; }
+    if(ch==="い"&&p&&p.v==="e") { out.push({c:"",v:"e",long:true}); continue; }
+    out.push(mm);
+  }
+  return out;
+}
+
+// 1フレーム=5ms の制御トラックを作る
+function buildTrack(morae, speed){
+  const seg=[]; // {d(ms), f:[F1,F2,F3]|null(=前を保持), av, ah, af, fc, fb}
+  const P=(d,o)=>seg.push(Object.assign({d:d/speed,av:0,ah:0,af:0,fc:3000,fb:1500,f:null},o));
+  let prevF=VOW.o;
+  for(const m of morae){
+    const vf=m.v?VOW[m.v]:null;
+    const tgt=vf||prevF;
+    if(vf) prevF=vf;
+    switch(m.c){
+      case "Q": P(85,{}); continue;
+      case "N": P(120,{f:[280,1400,2400],av:0.65}); continue;
+      case "k": P(40,{f:tgt}); P(9,{f:tgt,af:1,fc:(m.v==="i"||m.v==="e"||m.pal)?3400:1700,fb:1400}); P(28,{f:tgt,ah:0.55}); break;
+      case "g": P(34,{f:[220,tgt[1],tgt[2]],av:0.25}); P(7,{f:tgt,af:0.35,fc:(m.v==="i"||m.v==="e")?3200:1700,fb:1400,av:0.5}); break;
+      case "t": P(38,{f:tgt}); P(8,{f:tgt,af:0.9,fc:4300,fb:2200}); P(26,{f:tgt,ah:0.5}); break;
+      case "d": P(32,{f:[220,tgt[1],tgt[2]],av:0.25}); P(6,{f:tgt,af:0.35,fc:4000,fb:2200,av:0.5}); break;
+      case "p": P(40,{f:tgt}); P(8,{f:tgt,af:0.8,fc:900,fb:1500}); P(24,{f:tgt,ah:0.5}); break;
+      case "b": P(34,{f:[220,tgt[1]*0.8,tgt[2]],av:0.25}); P(6,{f:tgt,af:0.3,fc:900,fb:1500,av:0.5}); break;
+      case "ch": P(34,{f:tgt}); P(75,{f:tgt,af:0.7,fc:3300,fb:1800,ah:0.15}); break;
+      case "ts": P(32,{f:tgt}); P(70,{f:tgt,af:0.75,fc:5200,fb:2600}); break;
+      case "s": P(100,{f:tgt,af:0.8,fc:5600,fb:2800}); break;
+      case "sh": P(105,{f:tgt,af:0.75,fc:3300,fb:1700}); break;
+      case "z": P(60,{f:tgt,af:0.4,fc:5600,fb:2800,av:0.5}); break;
+      case "j": P(30,{f:[250,2200,3000],av:0.3}); P(50,{f:tgt,af:0.4,fc:3300,fb:1700,av:0.5}); break;
+      case "h": P(75,{f:tgt,ah:0.8}); break;
+      case "hy": P(80,{f:VOW.i,ah:0.8}); break;
+      case "f": P(85,{f:tgt,af:0.35,fc:1400,fb:2600,ah:0.25}); break;
+      case "n": P(65,{f:[260,m.v==="i"?2100:1500,2500],av:0.65}); break;
+      case "m": P(65,{f:[250,1100,2300],av:0.6}); break;
+      case "r": P(28,{f:[400,1500,2400],av:0.45}); break;
+      case "y": P(55,{f:[300,2200,3000],av:0.9}); break;
+      case "w": P(55,{f:[320,750,2300],av:0.9}); break;
+      default: break;
+    }
+    if(m.pal) P(40,{f:[300,2200,3000],av:0.9});
+    if(m.v) P(m.long?120:105,{f:tgt,av:1});
+  }
+  P(60,{f:prevF}); // 余韻
+  return seg;
+}
+
+function renderWord(word,{f0=140,scale=1,speed=1,seed=1}={}){
+  const morae=toMorae(word), seg=buildTrack(morae,speed);
+  const FR=Math.round(SR*0.005);
+  let totalMs=0; seg.forEach(s=>totalMs+=s.d);
+  const nFr=Math.ceil(totalMs/5)+2;
+  // 制御トラック
+  const T={av:new Float32Array(nFr),ah:new Float32Array(nFr),af:new Float32Array(nFr),fc:new Float32Array(nFr),fb:new Float32Array(nFr),F:[new Float32Array(nFr),new Float32Array(nFr),new Float32Array(nFr)]};
+  let fi=0, last=VOW.a;
+  for(const s of seg){
+    const n=Math.max(1,Math.round(s.d/5));
+    const f=s.f||last; last=f;
+    for(let k=0;k<n&&fi<nFr;k++,fi++){
+      T.av[fi]=s.av;T.ah[fi]=s.ah;T.af[fi]=s.af;T.fc[fi]=s.fc;T.fb[fi]=s.fb;
+      for(let j=0;j<3;j++)T.F[j][fi]=f[j]*scale;
+    }
+  }
+  const used=fi, N=used*FR;
+  const out=new Float32Array(N);
+  // 平滑化状態
+  let sav=0,sah=0,saf=0,sfc=3000,sfb=1500,sF=[500,1500,2500];
+  const aFast=1-Math.exp(-1/(0.0025/0.005)), aSlow=1-Math.exp(-1/(0.012/0.005)); // フレーム単位
+  let ph=0, rnd=seed*9301+49297;
+  const noise=()=>{rnd=(rnd*1103515245+12345)&0x7fffffff;return rnd/0x3fffffff-1;};
+  const res=()=>({y1:0,y2:0});
+  const r1=res(),r2=res(),r3=res(),r4=res(),rf=res(),rf2=res();
+  const coef=(F,B)=>{const C=-Math.exp(-2*Math.PI*B/SR),Bc=2*Math.exp(-Math.PI*B/SR)*Math.cos(2*Math.PI*F/SR);return[1-Bc-C,Bc,C];};
+  const run=(r,c,x)=>{const y=c[0]*x+c[1]*r.y1+c[2]*r.y2;r.y2=r.y1;r.y1=y;return y;};
+  let gprev=0, tNow=0;
+  const total=N/SR;
+  for(let f=0;f<used;f++){
+    const ia=f+1<nFr?f:f;
+    sav+=(T.av[f]-sav)*aFast; sah+=(T.ah[f]-sah)*aFast; saf+=(T.af[f]-saf)*aFast;
+    sfc+=(T.fc[f]-sfc)*aFast; sfb+=(T.fb[f]-sfb)*aFast;
+    for(let j=0;j<3;j++)sF[j]+=(T.F[j][f]-sF[j])*aSlow;
+    const c1=coef(sF[0],70*Math.max(1,scale*0.9)),c2=coef(sF[1],95),c3=coef(sF[2],140),c4=coef(3500*scale,250);
+    const cf=coef(Math.min(sfc,SR*0.45),sfb), cf2=coef(Math.min(sfc,SR*0.45),sfb);
+    const prog=(f*5/1000)/total;
+    for(let n=0;n<FR;n++){
+      const i=f*FR+n, t=i/SR;
+      // 声の高さ: 下降イントネーション+ゆらぎ
+      const f0t=f0*(1.07-0.17*prog)*(1+0.012*Math.sin(2*Math.PI*5*t));
+      ph+=f0t/SR; if(ph>=1)ph-=1;
+      let g=0;
+      if(ph<0.6) g=0.5*(1-Math.cos(Math.PI*ph/0.6)); else if(ph<0.8) g=Math.cos(Math.PI/2*(ph-0.6)/0.2);
+      const dg=g-gprev; gprev=g;
+      const nz=noise();
+      const src=dg*sav*9 + nz*sah*0.9;
+      let y=run(r1,c1,src); y=run(r2,c2,y); y=run(r3,c3,y); y=run(r4,c4,y);
+      let fr=run(rf,cf,nz); fr=run(rf2,cf2,fr);
+      out[i]=y*0.5 + fr*saf*FRG;
+    }
+  }
+  // 語頭語尾のフェード
+  const fade=Math.round(SR*0.01);
+  for(let i=0;i<fade;i++){out[i]*=i/fade;out[N-1-i]*=i/fade;}
+  // ピーク正規化
+  let ss=0;for(let i=0;i<N;i++)ss+=out[i]*out[i];
+  const rms=Math.sqrt(ss/N)||1, g=0.16/rms;
+  for(let i=0;i<N;i++)out[i]=Math.tanh(out[i]*g*1.2)/1.2;
+  return out;
+}
+
+  // ===== 同時再生 (Web Audio) =====
+  // 3人分の波形をその場で作り、同じ開始時刻で一斉に鳴らす。外部の音声サービスや
+  // ブラウザの読み上げ(順番待ちキュー)を使わないので、PC/iPhone/Android どこでも重なる。
+  let actx=null, master=null, activeSrc=[], playToken=0;
+  function unlockAudio(){
+    try{ if(navigator.audioSession) navigator.audioSession.type="playback"; }catch(e){} // iPhoneのマナーモードでも鳴らす
+    if(!actx){
+      const AC=window.AudioContext||window.webkitAudioContext; if(!AC) return false;
+      actx=new AC();
+      const comp=actx.createDynamicsCompressor(); master=actx.createGain(); master.gain.value=0.9;
+      master.connect(comp); comp.connect(actx.destination);
+    }
+    if(actx.state!=="running") actx.resume();
+    // iOS対策: ユーザー操作の中で無音を1回鳴らして出力を有効化
+    try{ const s=actx.createBufferSource(); s.buffer=actx.createBuffer(1,1,SR); s.connect(actx.destination); s.start(0); }catch(e){}
+    return true;
+  }
+  const VOICE_BASE=[{f0:225,scale:1.15},{f0:140,scale:1.0},{f0:100,scale:0.87}];
+  function voiceParams(i,spread){
+    const b=VOICE_BASE[i], mid=VOICE_BASE[1];
+    return {f0: mid.f0*Math.pow(b.f0/mid.f0,spread), scale: Math.pow(b.scale,spread)};
+  }
+  // ===== 録音済み(自然な)音声: voices_data.js があればそれを使う =====
+  const NAT_RATE=[1.17,1.0,0.86]; // A=高め / B=ふつう / C=低め（再生速度で声の高さを変える）
+  const voiceCache={};
+  const hasNatural=()=>!!(window.VOICE_DATA&&Object.keys(window.VOICE_DATA).length);
+  function trimBuffer(buf){
+    const d=buf.getChannelData(0); let pk=0; for(let i=0;i<d.length;i++) pk=Math.max(pk,Math.abs(d[i]));
+    const th=pk*0.04; let a=0,b=d.length-1;
+    while(a<b&&Math.abs(d[a])<th)a++; while(b>a&&Math.abs(d[b])<th)b--;
+    a=Math.max(0,a-Math.round(buf.sampleRate*0.01)); b=Math.min(d.length-1,b+Math.round(buf.sampleRate*0.03));
+    const n=b-a+1, out=actx.createBuffer(1,n,buf.sampleRate), o=out.getChannelData(0);
+    let ss=0; for(let i=0;i<n;i++){o[i]=d[a+i];ss+=o[i]*o[i];}
+    let g=0.14/(Math.sqrt(ss/n)||1); let pp=0; for(let i=0;i<n;i++)pp=Math.max(pp,Math.abs(o[i])); if(pp*g>0.95)g=0.95/pp;
+    for(let i=0;i<n;i++)o[i]*=g;
+    return out;
+  }
+  async function getVoiceBuffer(word){
+    if(voiceCache[word]) return voiceCache[word];
+    const data=window.VOICE_DATA&&window.VOICE_DATA[word]; if(!data) return null;
+    const bin=atob(data.split(",")[1]), u8=new Uint8Array(bin.length);
+    for(let i=0;i<bin.length;i++)u8[i]=bin.charCodeAt(i);
+    const buf=await new Promise((res,rej)=>{const p=actx.decodeAudioData(u8.buffer,res,rej); if(p&&p.catch)p.catch(rej);});
+    return voiceCache[word]=trimBuffer(buf);
+  }
+  async function preloadVoices(){
+    if(!hasNatural()||!actx) return;
+    for(const w of wordBank){ try{ await getVoiceBuffer(w); }catch(e){} }
+  }
+  async function speakSimultaneously(words, speedFactor){
+    if(!unlockAudio()) return false;
+    stopSpeech(); const token=++playToken;
+    const sel=$("voice").value, spread=sel==="wide"?1.25:sel==="narrow"?0.55:1;
+    let bufs=null, rates=[1,1,1];
+    try{
+      const nat=await Promise.all(words.map(getVoiceBuffer));
+      if(nat.every(Boolean)){ bufs=nat; rates=NAT_RATE.map(r=>Math.pow(r,spread)*speedFactor); }
+    }catch(e){ bufs=null; }
+    if(!bufs){
+      bufs=words.map((w,i)=>{
+        const vp=voiceParams(i,spread);
+        const data=renderWord(w,{f0:vp.f0,scale:vp.scale,speed:people[i].rate*speedFactor,seed:i+1+round*7});
+        const buf=actx.createBuffer(1,data.length,SR); buf.getChannelData(0).set(data); return buf;
+      });
+    }
+    if(actx.state!=="running") await actx.resume();
+    if(token!==playToken) return true;
+    const t0=actx.currentTime+0.08; // 3つとも完全に同じ開始時刻
+    const ends=bufs.map((buf,i)=>new Promise(res=>{
+      const s=actx.createBufferSource(); s.buffer=buf; s.playbackRate.value=rates[i];
+      const g=actx.createGain(); g.gain.value=0.6;
+      s.connect(g); g.connect(master); s.onended=res; s.start(t0); activeSrc.push(s);
+    }));
+    await Promise.all(ends);
+    return true;
+  }
+  $("voiceMode").textContent=hasNatural()?"自然な声（録音済み音声）":"簡易合成音声（voices_data.js が見つかりません）";
+  function stopSpeech(){
+    playToken++;
+    activeSrc.forEach(s=>{try{s.onended=null;s.stop();}catch(e){}});
+    activeSrc=[];
+    $("people").classList.remove("playing");
+  }
+  function setPhase(title,text){$("phaseTitle").textContent=title;$("phaseText").textContent=text;}
+  function setBusy(on){$("listen").disabled=on;$("submit").disabled=on;$("listen").style.opacity=on?".6":"1";}
+  // 文字数設定に合う単語の一覧（録音済み音声がある単語だけを使う）
+  let poolNotice="";
+  function wordPool(){
+    const sel=$("wlen").value, [lo,hi]=sel==="all"?[0,99]:sel.includes("-")?sel.split("-").map(Number):[Number(sel),Number(sel)];
+    const usable=w=>!hasNatural()||(window.VOICE_DATA&&window.VOICE_DATA[w]);
+    let pool=wordBank.filter(w=>usable(w)&&w.length>=lo&&w.length<=hi);
+    poolNotice="";
+    if(pool.length<3){ pool=wordBank.filter(usable); poolNotice="（その文字数の単語が足りないため、すべての単語から出題します）"; }
+    return pool.slice();
+  }
+  function newQuestion(){
+    answered=false; $("feedback").classList.add("hidden");$("next").classList.add("hidden");$("showAnswer").classList.add("hidden");
+    $("answerArea").classList.remove("hidden"); $("submit").classList.remove("hidden");
+    for(let i=0;i<3;i++) $("ans"+i).value="";
+    const pool=wordPool();
+    answers=[];
+    for(let i=0;i<3;i++){const ix=Math.floor(Math.random()*pool.length);answers.push(pool.splice(ix,1)[0]);}
+    $("roundNow").textContent=round+1; $("score").textContent=score;
+    setPhase("耳をすませて！","3人の声を聞いて、言葉を覚えよう。"+poolNotice);
+    setBusy(false);
+    setTimeout(()=>speakQuestion(false),250);
+  }
+  async function speakQuestion(replay=true){
+    if(!running||answered)return;
+    if(!(window.AudioContext||window.webkitAudioContext)){setPhase("音声に対応していません","このブラウザは音声再生(Web Audio)に対応していません。");return;}
+    stopSpeech(); setBusy(true); $("people").classList.add("playing");
+    setPhase("みんなで話しているよ…","声が重なるよ！ よく聞いてね。");
+    const diff=$("difficulty").value;
+    const rateFactor=diff==="easy"?0.82:diff==="hard"?1.12:1;
+    let ok=false;
+    try{ ok=await speakSimultaneously(answers,rateFactor); }catch(e){ ok=false; }
+    if(!ok&&running&&!answered) setPhase("音声を再生できませんでした","画面をタップしてから「もう一度聞く」を押してください。");
+    $("people").classList.remove("playing"); setBusy(false);
+    if(!answered&&running)setPhase("聞き取れたかな？","入力欄に3人の言葉を入れて、答え合わせ！");
+  }
+  function startGame(){
+    if(!unlockAudio()){alert("このブラウザは音声再生(Web Audio)に対応していません。");return;}
+    preloadVoices(); stopSpeech(); round=0;score=0;correctTotal=0;total=Number($("rounds").value);running=true;
+    $("roundMax").textContent=total;$("setup").classList.add("hidden");$("intro").classList.add("hidden");$("result").classList.add("hidden");$("game").classList.remove("hidden");
+    newQuestion();
+  }
+  function checkAnswer(){
+    if(answered||!running)return;
+    const inputs=[0,1,2].map(i=>normalize($("ans"+i).value));
+    if(inputs.some(x=>!x)){ $("feedback").textContent="3人分すべて入力してね！";$("feedback").className="feedback bad";return;}
+    answered=true;stopSpeech();
+    // 順不同で照合。正解語は1回ずつしかカウントしない。
+    const remaining=answers.map(normalize);
+    let n=0;
+    for(const input of inputs){
+      const idx=remaining.indexOf(input);
+      if(idx!==-1){ n++; remaining.splice(idx,1); }
+    }
+    score+=n*100;correctTotal+=n;$("score").textContent=score;
+    $("feedback").textContent=`${n===3?"🎉 全問正解！":n===0?"おしい！ 次は集中！":`${n}つ正解！`}（+${n*100}点）\n正解の言葉：${answers.join("・")}`;
+    $("feedback").className="feedback "+(n===3?"good":"bad");
+    $("submit").classList.add("hidden");$("showAnswer").classList.remove("hidden");$("next").classList.remove("hidden");
+    $("listen").disabled=true;
+    for(let i=0;i<3;i++) $("ans"+i).disabled=true;
+    setPhase("答え合わせ！","正解を確認して、次の問題に進もう。");
+  }
+  function nextQuestion(){
+    if(!running)return;
+    stopSpeech();round++;
+    if(round>=total){finish();return;}
+    for(let i=0;i<3;i++)$("ans"+i).disabled=false;
+    newQuestion();
+  }
+  function finish(){
+    running=false;stopSpeech();$("game").classList.add("hidden");$("result").classList.remove("hidden");
+    $("finalScore").textContent=score;
+    const max=total*300,pct=Math.round(correctTotal/(total*3)*100);
+    $("resultText").textContent=pct>=90?"すごい！ 聖徳太子級の聞き分け力！":pct>=65?"いい調子！ 耳がどんどん鍛えられているよ。":"ナイスチャレンジ！ 何度も挑戦して耳を鍛えよう。";
+    $("resultDetail").textContent=`${total}問中 ${correctTotal}/${total*3}個正解（正答率 ${pct}%）・最高 ${max}点`;
+  }
+  function showAnswer(){ if(!answered)return; $("feedback").textContent += "\n正解： "+answers.join("・"); $("showAnswer").classList.add("hidden");}
+  function backToSetup(){stopSpeech();running=false;$("game").classList.add("hidden");$("result").classList.add("hidden");$("setup").classList.remove("hidden");$("intro").classList.remove("hidden");}
+  $("start").addEventListener("click",startGame);
+  $("listen").addEventListener("click",()=>{unlockAudio();speakQuestion(true);});
+  $("submit").addEventListener("click",checkAnswer);
+  $("next").addEventListener("click",nextQuestion);
+  $("showAnswer").addEventListener("click",showAnswer);
+  $("quit").addEventListener("click",backToSetup);
+  $("again").addEventListener("click",startGame);
+  $("back").addEventListener("click",backToSetup);
+  [0,1,2].forEach(i=>$("ans"+i).addEventListener("keydown",e=>{if(e.key==="Enter"){if(i<2)$("ans"+(i+1)).focus();else checkAnswer();}}));
+  window.addEventListener("pagehide",stopSpeech);
+})();
+</script>
+</body>
+</html>
