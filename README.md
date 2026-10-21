@@ -1,0 +1,2 @@
+# sho-toku-taishi
+mimitore
